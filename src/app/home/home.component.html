@@ -1,0 +1,165 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>Get All Users</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col"> fullname</th>
+                        <th scope="col">username</th>
+                        <th scope="col">mobileno</th>
+                        <th scope="col">email</th>
+                        <th scope="col">qualification</th>
+                        <th scope="col">password</th>
+                        <th scope="col">address</th>
+                        
+                    </tr>
+                </thead>
+                <tbody *ngFor="let r of data">
+                    <tr>
+                        <td>{{r._id}}</td>
+                        <td>{{r.fullname}}</td>
+                        <td>{{r.username}}</td>
+                        <td>{{r.mobileno}}</td>
+                        <td> {{r.email}}</td>
+                        <td>{{r.qualification}} </td>
+                        <td>{{r.password}}</td>
+                        <td>{{r.address}}</td>
+
+                        <td><button class="btn btn-primary  mt-3" type="submit"
+                                (click)="userdeleted(r._id)">delete</button></td>
+                        <td><!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" (click)="userEdit(r)">
+                                edit
+                            </button>
+
+
+                        </td>
+
+
+                    </tr>
+                </tbody>
+
+
+            </table>
+
+        </div>
+        <button class="btn btn-primary b2" type="submit" (click)="userid()" >getprofile</button>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Registration page</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="card bc">
+                            <div class="card-body">
+                                <h3 class="hh">Registration</h3>
+                                <form [formGroup]="updateForm">
+                                    <div class="row mt-5">
+                                        <div class="col-6">
+                                            <h5 class="rh">Fullname</h5>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" placeholder="name"
+                                                formControlName="fullname">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5">
+                                        <div class="col-6">
+                                            <h5 class="rh">username</h5>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" placeholder="name"
+                                                formControlName="username">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-6">
+                                            <h5 class="rh">Email</h5>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="email" class="form-control" placeholder="name"
+                                                formControlName="email">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-6">
+                                            <h5 class="rh">Phonenumber</h5>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="number" class="form-control" placeholder="name"
+                                                formControlName="mobileno">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-6">
+                                            <h5 class="rh">Password</h5>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="password" class="form-control" placeholder="name"
+                                                formControlName="password">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-6">
+                                            <h5 class="rh">Gender</h5>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="radio" id="male" value="male" formControlName="gender">
+                                            <label>male</label>
+                                            <input type="radio" id="female" value="female" formControlName="gender">
+                                            <label>female</label>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+
+                                        <div class="col-6">
+                                            <h5 class="rh">Qualification</h5>
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="checkbox" name="B-tech" id="btech" class="" placeholder="name"
+                                                formControlName="qualification">
+                                            <label>B-tech</label>
+                                            <input type="checkbox" name="MCA" id="MCA" class="" placeholder="name"
+                                                formControlName="qualification">
+                                            <label>MCA</label>
+                                            <input type="checkbox" name="Degree" id="Degree" class="" placeholder="name"
+                                                formControlName="qualification">
+                                            <label>Degree</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-6">
+                                            <h5 class="rh">Address</h5>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" placeholder="Address"
+                                                formControlName="address">
+                                        </div>
+                                    </div>
+                                </form>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" (click)="updated()">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="container">
+    <div class="card bc">
+        <div class="card-body">
+            <form [formGroup]="Loginform">
+                <h3 class="hh">Login</h3>
+                <div class="row mt-5">
+                    <div class="col-6">
+                        <h5 class="rh">Name</h5>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" class="form-control" placeholder="name" formControlName="name">
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-6">
+                        <h5 class="rh">password</h5>
+                    </div>
+                    <div class="col-6">
+                        <input type="password" class="form-control" placeholder="pasword" formControlName="password">
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit" (click)="getUser()">signin</button>
+                <button class="btn btn-primary b2" type="submit" routerLink="/registration" >register</button>
+               
+
+            </form>
+        </div>
+    </div>
+
+</div>

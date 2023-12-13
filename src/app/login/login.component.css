@@ -1,0 +1,17 @@
+input{
+    width: 250px;
+    
+}
+.bc{
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.rh{
+    margin-left: 250px;
+}
+.hh{
+    margin-left: 500px;
+}
+.b2{
+    margin-left: 50px;
+}
