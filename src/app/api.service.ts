@@ -9,6 +9,8 @@ export class ApiService {
 
   constructor( private http: HttpClient) { }
   userLogin(a:any){
+    console.log(a,'aaa');
+    
     return this.http.post("http://localhost:3000/user/login", a);
 
   }

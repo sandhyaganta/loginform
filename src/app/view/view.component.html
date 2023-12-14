@@ -1,1 +1,53 @@
-<p>view works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <div class="card text-bg-light mb-3" style="max-width: 18rem;">
+                <div class="card-header">UserDetails</div>
+                <div class="card-body" >
+                    <h5 class="card-title">userprofile</h5>
+                    <p class="card-text">{{data.username}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-10">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col"> fullname</th>
+                        <th scope="col">username</th>
+                        <th scope="col">mobileno</th>
+                        <th scope="col">email</th>
+                        <th scope="col">qualification</th>
+                        <th scope="col">password</th>
+                        <th scope="col">address</th>
+
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr>
+                        <td>{{data._id}}</td>
+                        <td>{{data.fullname}}</td>
+                        <td>{{data.username}}</td>
+                        <td>{{data.mobileno}}</td>
+                        <td> {{data.email}}</td>
+                        <td>{{data.qualification}} </td>
+                        <td>{{data.password}}</td>
+                        <td>{{data.address}}</td>
+
+
+
+
+
+
+
+                    </tr>
+                </tbody>
+
+
+
+            </table>
+
+        </div>
+
+    </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit(): void {
     this.Loginform=this.from.group({
-      name:[""],
+      username:[""],
       password:[""]
     
   })
@@ -36,7 +37,5 @@ export class LoginComponent implements OnInit {
     });
 
   }
-  
-
 
 }
