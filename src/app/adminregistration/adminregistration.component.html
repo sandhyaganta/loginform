@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="card bc">
+        <div class="card-body">
+            <h3 class="hh">Registration</h3>
+            <form [formGroup]="RegistrationForm" >
+                <div class="row mt-5">
+                    <div class="col-6">
+                        <h5 class="rh"> FullName</h5>
+                    </div>
+                    <div class="col-6">
+                        <input  [class.is-invalid]="fullname?.invalid && fullname?.touched"  type="text" class="form-control" placeholder=" Fullname" formControlName="fullname" >
+                        <div *ngIf="fullname?.invalid && fullname?.touched">
+                            <small class="text-danger"  *ngIf="fullname?.errors?.['required']">Name required</small>
+                            <small class="text-danger"  *ngIf="fullname?.errors?.['minlength']">Name  is to short</small>
+                            <small class="text-danger" *ngIf="fullname?.errors?.['pattern']"> start with Alphabet</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-6">
+                        <h5 class="rh">username</h5>
+                    </div>
+                    <div class="col-6">
+                        <input [class.is-invalid]="username?.invalid && username?.touched" type="text" class="form-control" placeholder="username"formControlName="username">
+                        <div *ngIf="username?.invalid && username?.touched">
+                            <small class="text-danger"  *ngIf="username?.errors?.['required']">Name required</small>
+                            <small class="text-danger"  *ngIf="username?.errors?.['minlength']">Name  is to short</small>
+                            <small class="text-danger" *ngIf="username?.errors?.['pattern']"> start with small letters</small>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <h5 class="rh">Email</h5>
+                    </div>
+                    <div class="col-6">
+                        <input [class.is-invalid]="email?.invalid && email?.touched" type="email" class="form-control" placeholder="email" formControlName="email">
+                        <div *ngIf="email?.invalid && email?.touched">
+                            <small class="text-danger" *ngIf="email?.errors?.['required']">email is required</small>
+                            <small class="text-danger" *ngIf="email?.errors?.['pattern']">enter valied email adderrs</small>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <h5 class="rh">Phonenumber</h5>
+                    </div>
+                    <div class="col-6">
+                        <input [class.is-invalid]="mobileno?.invalid && mobileno?.touched" type="number" class="form-control" placeholder="Phonenumber" formControlName="mobileno">
+                        <div *ngIf="mobileno?.invalid && mobileno?.touched">
+                            <small class="text-danger"  *ngIf="mobileno?.errors?.['required']">mobileno required</small>
+                            <small class="text-danger" *ngIf="mobileno?.errors?.['pattern']">required 10 numbers</small>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <h5 class="rh">Password</h5>
+                    </div>
+                    <div class="col-6">
+                        <input [class.is-invalid]="password?.invalid && password?.touched" type="password" class="form-control" placeholder="password" formControlName="password">
+                        <div *ngIf="password?.invalid && password?.touched">
+                        <small class="text-danger" *ngIf="password?.errors?.['required']" >password is requried</small>
+                        <small class="text-danger" *ngIf="password?.errors?.['pattern']" >password is number only</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <h5 class="rh">Gender</h5>
+                    </div>
+                    <div class="col-6">
+                        <input type="radio" name="gender"  id="male" value="male" formControlName="gender">
+                        <label>male</label>
+                        <input type="radio" name="gender"  id="female" value="female" formControlName="gender" >
+                        <label>female</label>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    
+                    <div class="col-6">
+                        <h5 class="rh">Qualification</h5>
+                    </div>
+                    <div class="col-4">
+                        <input type="checkbox" name="B-tech" id="btech" class="" placeholder="name" formControlName="qualification">
+                        <label>B-tech</label>
+                        <input type="checkbox" name="MCA" id="MCA" class="" placeholder="name" formControlName="qualification">
+                        <label>MCA</label>
+                        <input type="checkbox" name="Degree" id="Degree" class="" placeholder="name" formControlName="qualification">
+                        <label>Degree</label>
+                    </div>
+                    
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <h5 class="rh">Address</h5>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" class="form-control" placeholder="Address" formControlName="address">
+                    </div>
+                </div>
+            </form>
+
+            <button class="btn btn-primary bb1 mt-3" type="submit" (click)="addUser()">submit</button>
+
+        </div>
+    </div>

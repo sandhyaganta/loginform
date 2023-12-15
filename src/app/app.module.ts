@@ -9,6 +9,10 @@ import { HttpClientModule } from '@angular/common/http';
 import{FormsModule, ReactiveFormsModule}from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { ViewComponent } from './view/view.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdminhomeComponent } from './adminhome/adminhome.component';
+import { AdminregistrationComponent } from './adminregistration/adminregistration.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,12 @@ import { ViewComponent } from './view/view.component';
     RegistrationComponent,
     LoginComponent,
     HomeComponent,
-    ViewComponent
+    ViewComponent,
+    HomePageComponent,
+    AdminhomeComponent,
+    AdminloginComponent,
+    AdminregistrationComponent,
+    
   ],
   imports: [
     BrowserModule,

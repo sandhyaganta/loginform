@@ -1,0 +1,23 @@
+input{
+    width: 250px;
+    
+}
+.hh{
+    margin-left: 500px;
+}
+.rh{
+    margin-left: 250px;
+}
+.bc{
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.bb4{
+    background-color: rgb(78, 78, 252);
+    margin-left: 500px;
+}
+.bb1{
+    color: white ;
+    margin-left: 500px;
+    text-decoration: none;
+}
